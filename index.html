@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QMR Heavy Machinery Movers</title>
+<title>QMR Heavy Machinery Movers - Hyderabad</title>
 
 <style>
 * {
@@ -13,120 +13,250 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
-  color: #222;
+  font-family: 'Arial', sans-serif;
+  background: #f5f5f5;
+  color: #333;
 }
 
+/* Header with Logo */
 header {
-  background: #1f2937;
+  background: linear-gradient(135deg, #001a4d 0%, #003d99 100%);
   color: white;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-header h2 {
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo-text h1 {
+  font-size: 36px;
+  color: #ff6b35;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   margin-bottom: 5px;
 }
 
-nav {
-  background: #111827;
-  padding: 10px;
+.logo-text p {
+  font-size: 14px;
+  color: #ffc107;
+}
+
+.tagline {
+  background: #ff6b35;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-style: italic;
   text-align: center;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/* Navigation */
+nav {
+  background: #ff6b35;
+  padding: 12px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 10px 20px;
-  margin: 0 5px;
+  padding: 10px 25px;
   display: inline-block;
+  margin: 0 5px;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: bold;
 }
 
 nav a:hover {
-  background: #f59e0b;
+  background: #001a4d;
+  transform: translateY(-2px);
 }
 
+/* Hero Section */
 .hero {
-  background: #111827;
+  background: linear-gradient(135deg, #001a4d 0%, #003d99 100%);
   color: white;
   padding: 60px 20px;
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #ffc107;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  line-height: 1.6;
 }
 
 .btn {
   display: inline-block;
-  background: #f59e0b;
+  background: #ff6b35;
   color: white;
-  padding: 12px 24px;
+  padding: 14px 32px;
   text-decoration: none;
   border-radius: 5px;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
   border: none;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .btn:hover {
-  background: #d97706;
+  background: #ffc107;
+  color: #001a4d;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,107,53,0.3);
 }
 
+/* Section */
 .section {
-  padding: 50px 20px;
+  padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .section h2 {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 28px;
-  color: #1f2937;
+  margin-bottom: 50px;
+  font-size: 36px;
+  color: #001a4d;
+  position: relative;
+  padding-bottom: 20px;
 }
 
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+/* Services Section */
 .services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 
-.card {
+.service-card {
   background: white;
-  width: 280px;
-  padding: 20px;
+  padding: 25px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-top: 5px solid #ff6b35;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.service-card h3 {
+  color: #001a4d;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.service-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Gallery Section */
+.gallery-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 36px;
+  color: #001a4d;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.gallery-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: white;
+  cursor: pointer;
   transition: transform 0.3s;
 }
 
-.card:hover {
+.gallery-card:hover {
   transform: translateY(-5px);
 }
 
-.card h3 {
-  color: #1f2937;
-  margin-bottom: 15px;
+.gallery-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.3s;
+  display: block;
 }
 
-.card p {
-  line-height: 1.6;
+.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 20px 15px 15px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 /* Why Choose Us */
@@ -134,104 +264,166 @@ nav a:hover {
   background: white;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-left: 5px solid #ff6b35;
 }
 
-.why-choose p {
-  line-height: 1.8;
-  font-size: 16px;
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
 }
 
+.why-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.why-item h4 {
+  color: #ff6b35;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.why-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Contact Section */
 .contact {
-  background: #1f2937;
+  background: linear-gradient(135deg, #001a4d 0%, #003d99 100%);
   color: white;
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .contact h2 {
-  color: white;
-  margin-bottom: 30px;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ffc107;
 }
 
-.contact p {
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.info-box h3 {
+  color: #ffc107;
+  margin-bottom: 10px;
   font-size: 18px;
-  margin: 20px 0;
 }
 
-.contact a {
-  color: #f59e0b;
+.info-box p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.info-box a {
+  color: #ffc107;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.contact a:hover {
+.info-box a:hover {
+  color: white;
   text-decoration: underline;
 }
 
-.whatsapp {
+/* Footer */
+footer {
+  background: #001a4d;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 4px solid #ff6b35;
+}
+
+footer p {
+  margin: 5px 0;
+  line-height: 1.8;
+}
+
+/* Fixed Contact Buttons */
+.whatsapp-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
   background: #25D366;
   color: white;
-  padding: 15px;
+  padding: 16px;
   border-radius: 50%;
   text-decoration: none;
-  font-size: 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
   z-index: 99;
 }
 
-.whatsapp:hover {
-  transform: scale(1.1);
+.whatsapp-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.4);
 }
 
-.call {
+.call-btn {
   position: fixed;
-  bottom: 90px;
+  bottom: 100px;
   right: 20px;
   background: #2563eb;
   color: white;
-  padding: 15px;
+  padding: 16px;
   border-radius: 50%;
   text-decoration: none;
-  font-size: 24px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
   z-index: 99;
 }
 
-.call:hover {
-  transform: scale(1.1);
+.call-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
 }
 
-footer {
-  background: #111827;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 24px;
+  .logo-text h1 {
+    font-size: 28px;
   }
 
   nav a {
-    padding: 8px 12px;
+    padding: 8px 15px;
     margin: 2px;
     font-size: 14px;
   }
 
-  .section {
-    padding: 30px 15px;
+  .hero h2 {
+    font-size: 28px;
   }
 
-  .card {
-    width: 100%;
-    max-width: 300px;
+  .section h2,
+  .gallery-title {
+    font-size: 28px;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-card img {
+    height: 250px;
   }
 }
 </style>
@@ -239,92 +431,189 @@ footer {
 
 <body>
 
+<!-- Header with Logo -->
 <header>
-  <h2>QMR Heavy Machinery Movers</h2>
-  <p>Hyderabad - Industrial Machinery Shifting Experts</p>
+  <div class="header-container">
+    <div class="logo-text">
+      <h1>🏗️ QMR 🏗️</h1>
+      <p>Heavy Machinery Movers</p>
+    </div>
+  </div>
 </header>
 
+<div class="tagline">
+  "Where there is no access, We make it possible."
+</div>
+
+<!-- Navigation -->
 <nav>
   <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
   <a href="#why-choose">Why Us</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<!-- Hero Section -->
 <section class="hero">
-  <h1>Industrial Machinery Shifting Experts</h1>
-  <p>Safe • Reliable • Professional Machinery Movement Services</p>
-  <a class="btn" href="https://wa.me/918297077869">
-    Get Free Quote
-  </a>
+  <h2>Industrial Machinery Shifting Experts</h2>
+  <p>Safe • Reliable • Professional Machinery Movement Services in Hyderabad</p>
+  <a class="btn" href="https://wa.me/918297077869">Get Free Quote</a>
 </section>
 
+<!-- Services Section -->
 <section class="section" id="services">
   <h2>Our Services</h2>
   <div class="services">
-    <div class="card">
-      <h3>Manual Tripod Lifting Operations</h3>
-      <p>Safe and controlled lifting solutions for heavy industrial machinery.</p>
+    <div class="service-card">
+      <h3>🏗️ Manual Tripod Lifting</h3>
+      <p>Safe and controlled lifting solutions for heavy industrial machinery with precision.</p>
     </div>
 
-    <div class="card">
-      <h3>Manual Loading & Unloading</h3>
-      <p>Professional loading and unloading support for industrial equipment.</p>
+    <div class="service-card">
+      <h3>📦 Loading & Unloading</h3>
+      <p>Professional loading and unloading support for industrial equipment with care.</p>
     </div>
 
-    <div class="card">
-      <h3>Machinery Movement on Rollers</h3>
+    <div class="service-card">
+      <h3>🔄 Machinery on Rollers</h3>
       <p>Efficient machine shifting using rollers and manual handling methods.</p>
     </div>
 
-    <div class="card">
-      <h3>Rail Pole Machine Positioning</h3>
-      <p>Accurate machine placement using rail pole-assisted positioning.</p>
+    <div class="service-card">
+      <h3>🛠️ Rail Pole Positioning</h3>
+      <p>Accurate machine placement using rail pole-assisted positioning systems.</p>
     </div>
 
-    <div class="card">
-      <h3>Equipment Installation Support</h3>
-      <p>Guided alignment and positioning for industrial equipment setup.</p>
+    <div class="service-card">
+      <h3>⚙️ Installation Support</h3>
+      <p>Guided alignment and positioning for industrial equipment setup and installation.</p>
     </div>
   </div>
 </section>
 
+<!-- Gallery Section -->
+<section class="section" id="gallery">
+  <h2 class="gallery-title">Project Gallery</h2>
+  
+  <div class="gallery-container">
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x350?text=Manual+Tripod+Lifting+Operation" alt="Manual Tripod Lifting Operation">
+      <div class="gallery-label">Manual Tripod Lifting Operations</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x350?text=Equipment+Loading+Unloading" alt="Equipment Loading & Unloading">
+      <div class="gallery-label">Manual Loading & Unloading</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x350?text=Machine+Positioning" alt="Machine Positioning">
+      <div class="gallery-label">Machine Positioning</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x350?text=Installation+Support" alt="Installation Support">
+      <div class="gallery-label">Installation Support</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x350?text=Heavy+Equipment+Moving" alt="Heavy Equipment Moving">
+      <div class="gallery-label">Heavy Equipment Moving</div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="https://via.placeholder.com/400x350?text=Professional+Team" alt="Professional Team">
+      <div class="gallery-label">Our Professional Team</div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
 <section class="section" id="why-choose">
-  <h2>Why Choose Us</h2>
+  <h2>Why Choose QMR?</h2>
   <div class="why-choose">
-    <p>✔ <strong>Experienced Team</strong> - Years of proven expertise in machinery moving<br><br>
-    ✔ <strong>Industrial Safety Focused</strong> - All operations follow strict safety protocols<br><br>
-    ✔ <strong>Reliable Machinery Handling</strong> - Precision and care in every movement<br><br>
-    ✔ <strong>Hyderabad Service Coverage</strong> - Quick response across the region<br><br>
-    ✔ <strong>Fast Response & Support</strong> - Available when you need us<br><br>
-    ✔ <strong>Professional Equipment</strong> - State-of-the-art tools and machinery<br><br>
-    ✔ <strong>Competitive Pricing</strong> - Best value for professional services</p>
+    <div class="why-choose-grid">
+      <div class="why-item">
+        <h4>✔ Experienced Team</h4>
+        <p>Years of proven expertise in machinery moving and positioning</p>
+      </div>
+
+      <div class="why-item">
+        <h4>🛡️ Safety First</h4>
+        <p>All operations follow strict industrial safety protocols</p>
+      </div>
+
+      <div class="why-item">
+        <h4>⚡ Fast Response</h4>
+        <p>Quick availability and support across Hyderabad region</p>
+      </div>
+
+      <div class="why-item">
+        <h4>💯 Reliable Service</h4>
+        <p>Precision and care in every machinery movement</p>
+      </div>
+
+      <div class="why-item">
+        <h4>🏭 Professional Equipment</h4>
+        <p>State-of-the-art tools and machinery for optimal results</p>
+      </div>
+
+      <div class="why-item">
+        <h4>💰 Competitive Pricing</h4>
+        <p>Best value for professional machinery moving services</p>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Contact Section -->
 <section class="contact" id="contact">
-  <h2>Contact Us</h2>
-  <p>
-    📞 <strong>Phone / WhatsApp:</strong> <a href="tel:+918297077869">+91 8297077869</a>
-  </p>
-  <p>
-    📍 <strong>Location:</strong> Hyderabad
-  </p>
-  <a class="btn" href="https://wa.me/918297077869" style="margin-top: 20px;">
-    WhatsApp Now - Get Free Quote
+  <h2>Contact Us Today</h2>
+  
+  <div class="contact-info">
+    <div class="info-box">
+      <h3>📞 Phone / WhatsApp</h3>
+      <p>
+        <a href="tel:+918297077869">+91 8297077869</a><br>
+        Available 24/7
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>📍 Location</h3>
+      <p>
+        Hyderabad<br>
+        Service Coverage: Entire Region
+      </p>
+    </div>
+
+    <div class="info-box">
+      <h3>💬 Quick Message</h3>
+      <p>
+        <a href="https://wa.me/918297077869">Chat on WhatsApp</a><br>
+        Get Free Quote Now
+      </p>
+    </div>
+  </div>
+
+  <a class="btn" href="https://wa.me/918297077869" style="font-size: 18px; padding: 16px 40px;">
+    Get Free Quote via WhatsApp
   </a>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>&copy; 2026 QMR Heavy Machinery Movers. All rights reserved.</p>
   <p>Professional Equipment Moving Services | Hyderabad</p>
+  <p>Safe • Reliable • Professional</p>
 </footer>
 
 <!-- Fixed Contact Buttons -->
-<a class="whatsapp" href="https://wa.me/918297077869" title="Chat on WhatsApp">
+<a class="whatsapp-btn" href="https://wa.me/918297077869" title="Chat on WhatsApp">
   💬
 </a>
 
-<a class="call" href="tel:+918297077869" title="Call us">
+<a class="call-btn" href="tel:+918297077869" title="Call us">
   📞
 </a>
 
