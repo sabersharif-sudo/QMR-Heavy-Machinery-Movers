@@ -6,95 +6,353 @@
 <title>QMR Heavy Machinery Movers</title>
 
 <style>
-body{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
-  margin:0;
-  background:#f4f4f4;
-  color:#222;
+  background: #f4f4f4;
+  color: #222;
 }
 
-header{
-  background:#1f2937;
-  color:white;
-  padding:20px;
-  text-align:center;
+header {
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.hero{
-  background:#111827;
-  color:white;
-  padding:60px 20px;
-  text-align:center;
+header h2 {
+  margin-bottom: 5px;
 }
 
-.hero h1{
-  font-size:36px;
-  margin-bottom:10px;
+nav {
+  background: #111827;
+  padding: 10px;
+  text-align: center;
 }
 
-.hero p{
-  font-size:18px;
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  display: inline-block;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
-.btn{
-  display:inline-block;
-  background:#f59e0b;
-  color:white;
-  padding:12px 24px;
-  margin-top:20px;
-  text-decoration:none;
-  border-radius:5px;
+nav a:hover {
+  background: #f59e0b;
 }
 
-.section{
-  padding:50px 20px;
-  text-align:center;
+.hero {
+  background: #111827;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.services{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.card{
-  background:white;
-  width:300px;
-  padding:20px;
-  border-radius:8px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-.contact{
-  background:#1f2937;
-  color:white;
-  padding:40px 20px;
-  text-align:center;
+.btn {
+  display: inline-block;
+  background: #f59e0b;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:24px;
+.btn:hover {
+  background: #d97706;
 }
 
-.call{
-  position:fixed;
-  bottom:90px;
-  right:20px;
-  background:#2563eb;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:24px;
+.section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  color: #1f2937;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  width: 280px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Gallery Section */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  background: #e5e7eb;
+  aspect-ratio: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item.video {
+  position: relative;
+}
+
+.gallery-item.video::after {
+  content: "▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.gallery-item.video:hover::after {
+  background: rgba(245, 158, 11, 0.7);
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  animation: fadeIn 0.3s;
+}
+
+.lightbox.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.lightbox-content img,
+.lightbox-content video,
+.lightbox-content iframe {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.lightbox-close:hover {
+  background: #f59e0b;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: #f59e0b;
+}
+
+.lightbox-prev {
+  left: -60px;
+}
+
+.lightbox-next {
+  right: -60px;
+}
+
+/* Why Choose Us */
+.why-choose {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.why-choose p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.contact {
+  background: #1f2937;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact a {
+  color: #f59e0b;
+  text-decoration: none;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  z-index: 99;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+.call {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+  z-index: 99;
+}
+
+.call:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    left: 10px;
+    right: auto;
+  }
+
+  .lightbox-next {
+    left: auto;
+    right: 10px;
+  }
 }
 </style>
 </head>
@@ -103,23 +361,27 @@ header{
 
 <header>
   <h2>QMR Heavy Machinery Movers</h2>
-  <p>Hyderabad</p>
+  <p>Hyderabad - Industrial Machinery Shifting Experts</p>
 </header>
+
+<nav>
+  <a href="#services">Services</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#why-choose">Why Us</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <section class="hero">
   <h1>Industrial Machinery Shifting Experts</h1>
   <p>Safe • Reliable • Professional Machinery Movement Services</p>
-
   <a class="btn" href="https://wa.me/918297077869">
     Get Free Quote
   </a>
 </section>
 
-<section class="section">
+<section class="section" id="services">
   <h2>Our Services</h2>
-
   <div class="services">
-
     <div class="card">
       <h3>Manual Tripod Lifting Operations</h3>
       <p>Safe and controlled lifting solutions for heavy industrial machinery.</p>
@@ -144,45 +406,161 @@ header{
       <h3>Equipment Installation Support</h3>
       <p>Guided alignment and positioning for industrial equipment setup.</p>
     </div>
-
   </div>
 </section>
 
-<section class="section">
-  <h2>Why Choose Us</h2>
+<!-- Gallery Section -->
+<section class="section" id="gallery">
+  <h2>Project Gallery & Videos</h2>
+  
+  <div class="gallery-container">
+    <!-- Sample Images - Replace with your actual images -->
+    <div class="gallery-item" onclick="openLightbox(0)">
+      <img src="https://via.placeholder.com/400x400?text=Machinery+Lifting" alt="Machinery Lifting Operation">
+    </div>
 
-  <p>
-    ✔ Experienced Team<br><br>
-    ✔ Industrial Safety Focused<br><br>
-    ✔ Reliable Machinery Handling<br><br>
-    ✔ Hyderabad Service Coverage<br><br>
-    ✔ Fast Response & Support
-  </p>
+    <div class="gallery-item" onclick="openLightbox(1)">
+      <img src="https://via.placeholder.com/400x400?text=Heavy+Equipment+Moving" alt="Heavy Equipment Moving">
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(2)">
+      <img src="https://via.placeholder.com/400x400?text=Roller+Movement" alt="Roller Movement">
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(3)">
+      <img src="https://via.placeholder.com/400x400?text=Machine+Positioning" alt="Machine Positioning">
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(4)">
+      <img src="https://via.placeholder.com/400x400?text=Installation+Support" alt="Installation Support">
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(5)">
+      <img src="https://via.placeholder.com/400x400?text=Team+at+Work" alt="Team at Work">
+    </div>
+
+    <!-- Sample Video - Replace with your YouTube/Vimeo link -->
+    <div class="gallery-item video" onclick="openLightbox(6)">
+      <img src="https://via.placeholder.com/400x400?text=Watch+Demo+Video" alt="Demo Video">
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox(7)">
+      <img src="https://via.placeholder.com/400x400?text=Project+Completion" alt="Project Completion">
+    </div>
+  </div>
 </section>
 
-<section class="contact">
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-content">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <span class="lightbox-prev" onclick="changeGallery(-1)">&#10094;</span>
+    <span class="lightbox-next" onclick="changeGallery(1)">&#10095;</span>
+    <div id="lightbox-media"></div>
+  </div>
+</div>
+
+<section class="section" id="why-choose">
+  <h2>Why Choose Us</h2>
+  <div class="why-choose">
+    <p>✔ <strong>Experienced Team</strong> - Years of proven expertise in machinery moving<br><br>
+    ✔ <strong>Industrial Safety Focused</strong> - All operations follow strict safety protocols<br><br>
+    ✔ <strong>Reliable Machinery Handling</strong> - Precision and care in every movement<br><br>
+    ✔ <strong>Hyderabad Service Coverage</strong> - Quick response across the region<br><br>
+    ✔ <strong>Fast Response & Support</strong> - Available when you need us<br><br>
+    ✔ <strong>Professional Equipment</strong> - State-of-the-art tools and machinery<br><br>
+    ✔ <strong>Competitive Pricing</strong> - Best value for professional services</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
   <h2>Contact Us</h2>
-
-  <p>
-    📞 Phone / WhatsApp: 8297077869
+  <p style="font-size: 18px; margin: 20px 0;">
+    📞 <strong>Phone / WhatsApp:</strong> <a href="tel:+918297077869">+91 8297077869</a>
   </p>
-
-  <p>
-    📍 Hyderabad
+  <p style="font-size: 18px; margin: 20px 0;">
+    📍 <strong>Location:</strong> Hyderabad
   </p>
-
-  <a class="btn" href="https://wa.me/918297077869">
-    WhatsApp Now
+  <a class="btn" href="https://wa.me/918297077869" style="margin-top: 20px;">
+    WhatsApp Now - Get Free Quote
   </a>
 </section>
 
-<a class="whatsapp" href="https://wa.me/918297077869">
-💬
+<footer>
+  <p>&copy; 2026 QMR Heavy Machinery Movers. All rights reserved.</p>
+  <p>Professional Equipment Moving Services | Hyderabad</p>
+</footer>
+
+<!-- Fixed Contact Buttons -->
+<a class="whatsapp" href="https://wa.me/918297077869" title="Chat on WhatsApp">
+  💬
 </a>
 
-<a class="call" href="tel:+918297077869">
-📞
+<a class="call" href="tel:+918297077869" title="Call us">
+  📞
 </a>
+
+<script>
+// Gallery data - Replace with your actual images and videos
+const galleryItems = [
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Machinery+Lifting' },
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Heavy+Equipment+Moving' },
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Roller+Movement' },
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Machine+Positioning' },
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Installation+Support' },
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Team+at+Work' },
+  { type: 'video', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }, // Replace with your video
+  { type: 'image', src: 'https://via.placeholder.com/800x600?text=Project+Completion' }
+];
+
+let currentIndex = 0;
+
+function openLightbox(index) {
+  currentIndex = index;
+  const lightbox = document.getElementById('lightbox');
+  const mediaContainer = document.getElementById('lightbox-media');
+  const item = galleryItems[index];
+
+  if (item.type === 'image') {
+    mediaContainer.innerHTML = `<img src="${item.src}" alt="Gallery image">`;
+  } else if (item.type === 'video') {
+    mediaContainer.innerHTML = `<iframe width="800" height="600" src="${item.src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+  }
+
+  lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+function changeGallery(n) {
+  currentIndex += n;
+  if (currentIndex >= galleryItems.length) {
+    currentIndex = 0;
+  } else if (currentIndex < 0) {
+    currentIndex = galleryItems.length - 1;
+  }
+  openLightbox(currentIndex);
+}
+
+// Close lightbox when clicking outside the content
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeLightbox();
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox.classList.contains('active')) {
+    if (e.key === 'ArrowLeft') changeGallery(-1);
+    if (e.key === 'ArrowRight') changeGallery(1);
+    if (e.key === 'Escape') closeLightbox();
+  }
+});
+</script>
 
 </body>
 </html>
