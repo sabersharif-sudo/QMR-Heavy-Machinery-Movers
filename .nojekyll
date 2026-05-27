@@ -1,0 +1,3 @@
+# GitHub Pages enabled via configuration
+pages_enabled: true
+build_type: legacy
